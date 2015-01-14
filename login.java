@@ -24,23 +24,11 @@ public class login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JPasswordField passwordField;
+	private JPasswordField passwordField;   
 	public static String username;
 	public static String password;
-	public Connection conn = null;
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					login frame = new login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	public Connection conn = null;  //  maintain the connection to the database
+
 	public login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 436, 300);
@@ -60,8 +48,8 @@ public class login extends JFrame {
 				username=textField.getText();
 				char[] temp=passwordField.getPassword();
 				password=new String(temp);
-				String url = "jdbc:mysql://localhost/project";
-				connect(url, username,password);
+				String url = "jdbc:mysql://localhost/project";  // the address of the local database; project is the database we create on our computer
+				connect(url, username,password);                 // call the function to connect to the database
 				
 			}
 		});
@@ -104,9 +92,9 @@ public class login extends JFrame {
 		this.setResizable(false);
 	}
 	
-	public void connect(String url, String username, String password )
+	public void connect(String url, String username, String password ) // the function to connect to the local database
 	{
-		  try
+		  try          
           {
 			  Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 			  conn = DriverManager.getConnection (url, username, password);
@@ -114,14 +102,12 @@ public class login extends JFrame {
           }
 		  catch (Exception e)
           {
-              System.err.println ("Cannot connect to database server");
+              System.err.println ("Cannot connect to database server");//if some thing wrong happens with the connection, it will print "Cannot connect to database server"
           }
 	}
 	
-	public Connection getConnection()
+	public Connection getConnection()  //obtain the connection to the local  database
 	{
-		if(conn!=null) System.out.println ("Database connection");
-		else System.out.println ("Database connection1111");
 		return conn;
 		
 	}
