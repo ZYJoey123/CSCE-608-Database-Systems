@@ -24,7 +24,7 @@ public class login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JPasswordField passwordField;   
+	private JPasswordField passwordField;
 	public static String username;
 	public static String password;
 	public Connection conn = null;  //  maintain the connection to the database
@@ -94,7 +94,7 @@ public class login extends JFrame {
 	
 	public void connect(String url, String username, String password ) // the function to connect to the local database
 	{
-		  try          
+		  try
           {
 			  Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 			  conn = DriverManager.getConnection (url, username, password);
