@@ -8,6 +8,6 @@ Course projects of CSCE 608: Database Systems.
   4. Connected the UI with database through JDBC.
 
 
-Collaborated with: __BOLD__ Jiafan Wang, Haonan Wang, Tingshan Yu.
+Collaborated with: __Jiafan Wang__, __Haonan Wang__, __Tingshan Yu__.
 
-Wei Qiao
+__Wei Qiao__
